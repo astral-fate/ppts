@@ -1,1 +1,280 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض تقديمي - صياد العوالم (World Hunter)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a; /* Deep Blue */
+            --secondary-color: #f59e0b; /* Amber/Gold */
+            --background-color: #ffffff;
+            --page-bg: #f3f4f6; /* Light Gray */
+            --text-color: #1f2937; /* Dark Gray */
+            --light-text-color: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .deck-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px 0; }
+        .slide-wrapper { padding: 30px; }
+        .slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: var(--background-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: clamp(1rem, 4vw, 3rem);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        #slide-1 {
+            background: linear-gradient(rgba(10, 20, 40, 0.85), rgba(10, 20, 40, 0.85)), url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071&auto=format&fit=crop') no-repeat center center;
+            color: var(--light-text-color);
+            background-size: cover;
+        }
+        #slide-11 {
+             background: var(--primary-color);
+             color: var(--light-text-color);
+        }
+        .slide-content { width: 100%; max-width: 1200px; }
+        .two-panel-layout { display: flex; align-items: center; justify-content: center; gap: 5%; width: 100%; height: 100%; padding: 0 5%; }
+        .panel { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .panel-text { text-align: right; }
+        .panel-visual img { width: 100%; max-height: 80%; object-fit: contain; border-radius: 10px; }
+        .slide h1 { font-size: clamp(1.5rem, 3.5vw, 3rem); font-weight: 900; margin-bottom: 1.5vh; color: var(--primary-color); }
+        #slide-1 h1, #slide-11 h1 { color: var(--light-text-color); }
+        .slide h2 { font-size: clamp(1rem, 2vw, 1.8rem); font-weight: 700; color: var(--secondary-color); margin-top: 2vh; }
+        .slide p { font-size: clamp(0.8rem, 1.5vw, 1.2rem); line-height: 1.6; margin: 0 auto 2vh auto; max-width: 900px; }
+        .slide .highlight { color: var(--secondary-color); font-weight: 700; }
+        .card-container { display: flex; justify-content: center; gap: clamp(10px, 1.5vw, 20px); margin-top: 3vh; flex-wrap: nowrap; align-items: stretch; }
+        .card { background-color: #ffffff; padding: clamp(10px, 1.5vw, 20px); border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); flex: 1; border-top: 4px solid var(--secondary-color); display: flex; flex-direction: column; }
+        .card h3 { font-size: clamp(0.9rem, 1.6vw, 1.3rem); color: var(--primary-color); margin-bottom: 1.5vh; }
+        .card p { font-size: clamp(0.7rem, 1.2vw, 1rem); text-align: right; line-height: 1.5; }
+        .icon-container { display: flex; justify-content: space-around; gap: clamp(10px, 2vw, 40px); margin-top: 4vh; flex-wrap: nowrap; }
+        .icon-item { flex: 1; }
+        .icon-item img { width: clamp(40px, 5vw, 70px); height: clamp(40px, 5vw, 70px); margin-bottom: 1vh; }
+        .icon-item h3 { font-size: clamp(0.8rem, 1.6vw, 1.3rem); color: var(--primary-color); margin-bottom: 1vh; }
+        .icon-item p { font-size: clamp(0.7rem, 1.2vw, 0.9rem); }
+        @media print {
+            body { background-color: #ffffff; }
+            .deck-container { width: 100%; max-width: none; padding: 0; }
+            .slide-wrapper { padding: 0; page-break-after: always; }
+            .slide { box-shadow: none; border-radius: 0; height: 100vh; }
+            .slide-wrapper:last-child { page-break-after: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="deck-container">
+
+        <!-- Slide 1: Title -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-1">
+                <div class="slide-content">
+                    <h1>صياد العوالم (World Hunter)</h1>
+                    <p>تسخير الذكاء الاصطناعي والمشاركة المجتمعية لاكتشاف الكواكب الخارجية</p>
+                    <h2>تحدي ناسا لتطبيقات الفضاء</h2>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 2: The Problem -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-2">
+                <div class="slide-content">
+                    <h1>المشكلة: طوفان من البيانات، وبحث يدوي بطيء</h1>
+                    <p>تلسكوبات الفضاء ترسل كميات هائلة من البيانات يوميًا، لكن عملية تحليلها لاكتشاف عوالم جديدة ما زالت تمثل تحديًا كبيرًا.</p>
+                    <div class="card-container">
+                        <div class="card">
+                            <h3>فيض البيانات الفلكية</h3>
+                            <p>تنتج بعثات مثل TESS تيرابايتات من البيانات لملايين النجوم، وهو حجم يفوق القدرة البشرية على التحليل اليدوي الدقيق.</p>
+                        </div>
+                        <div class="card">
+                            <h3>عنق الزجاجة البشري</h3>
+                            <p>يعتمد الاكتشاف على تحليل العلماء للمنحنيات الضوئية، وهي عملية بطيئة ومجهدة، مما يؤخر عملية تحديد الكواكب المرشحة.</p>
+                        </div>
+                        <div class="card">
+                            <h3>فرص اكتشاف ضائعة</h3>
+                            <p>بسبب هذا البطء، تبقى غالبية البيانات دون تحليل معمّق، مما يعني أن آلاف الكواكب المحتملة قد تظل مختبئة في الأرشيف.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Slide 3: The Solution -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-3">
+                <div class="slide-content">
+                    <h1>الحل: منصة متكاملة للكشف والمشاركة</h1>
+                    <p>نظام ذكي يجمع بين دقة الآلة وإبداع الإنسان لتسريع وتيرة الاكتشافات الفلكية.</p>
+                    <div class="icon-container">
+                        <div class="icon-item">
+                            <img src="https://img.icons8.com/fluency/96/artificial-intelligence.png" alt="AI Icon"/>
+                            <h3>محرك ذكاء اصطناعي</h3>
+                            <p>نموذج تعلم آلي يمسح بيانات ناسا المفتوحة تلقائيًا ويحدد الإشارات الواعدة لعبور الكواكب.</p>
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://img.icons8.com/fluency/96/controller.png" alt="Gamification Icon"/>
+                            <h3>"لوعبة" عملية البحث</h3>
+                            <p>منصة تفاعلية تتيح للجمهور تحليل البيانات المرشحة بأسلوب ممتع وجذاب، وكسب النقاط.</p>
+                        </div>
+                         <div class="icon-item">
+                            <img src="https://img.icons8.com/fluency/96/education.png" alt="Education Icon"/>
+                            <h3>بوابة تعليمية</h3>
+                            <p>محتوى غني ومبسط يشرح علم الكواكب الخارجية ويدعو المستخدمين للمساهمة في العلم الحقيقي.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 4: The AI Model -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-4">
+                 <div class="slide-content">
+                     <h1>نموذج التعلم الآلي: العقل المدبر</h1>
+                     <div class="two-panel-layout">
+                        <div class="panel panel-visual">
+                           <img src="https://miro.medium.com/v2/resize:fit:1400/1*9j6-2FlH_aTscq-A162G0w.gif" alt="AI analyzing light curve data">
+                        </div>
+                        <div class="panel panel-text">
+                            <p>يتم تدريب نموذجنا (شبكة عصبونية التفافية - CNN) على آلاف المنحنيات الضوئية المؤكدة من أرشيف ناسا. يتعلم النموذج كيفية التمييز بين الانخفاض الحقيقي في السطوع الناتج عن عبور كوكب (U-Shape) وبين الضوضاء الناتجة عن نشاط النجم أو أخطاء الأجهزة.</p>
+                             <h2>الهدف: تقليل حجم البيانات التي تحتاج لمراجعة بشرية بنسبة 99%، وتركيز الجهود على المرشحين الأقوى.</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 5: The Prototype -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-5">
+                 <div class="slide-content">
+                     <h1>النموذج الأولي: تطبيق "صياد العوالم"</h1>
+                     <div class="two-panel-layout">
+                        <div class="panel panel-visual">
+                            <!-- A placeholder image that looks like the simulation UI -->
+                            <img src="https://i.imgur.com/8aV4z7g.png" alt="Screenshot of the Exoplanet Hunter simulation interface" style="border: 2px solid #ddd; border-radius: 10px;">
+                        </div>
+                        <div class="panel panel-text">
+                            <p>قمنا بتطوير نموذج أولي يعمل بكامل وظائفه باستخدام React، ويقدم تجربة متكاملة للمستخدم:</p>
+                            <ul>
+                                <li style="margin-bottom: 10px;"><strong>التعلم:</strong> استكشف نظامنا الشمسي وأنواع الكواكب الخارجية.</li>
+                                <li style="margin-bottom: 10px;"><strong>الاكتشاف:</strong> حلل منحنيات ضوئية حقيقية في المحاكي، حدد العبور المحتمل، واحصل على نتيجة فورية.</li>
+                                <li style="margin-bottom: 10px;"><strong>المساهمة:</strong> تعرف على مشاريع علم المواطن الحقيقية وانضم إليها لتساهم في اكتشافات فعلية.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Slide 6: Societal Impact -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-6">
+                 <div class="slide-content">
+                    <h1>الأثر المجتمعي: من البيانات إلى الإلهام</h1>
+                    <p>مشروعنا يتجاوز مجرد تحليل البيانات، بل يهدف إلى بناء مجتمع شغوف بالعلوم والفضاء.</p>
+                    <div class="card-container">
+                        <div class="card">
+                            <h3>إلهام الجيل القادم</h3>
+                            <p>جعل علوم الفضاء متاحة وممتعة للطلاب والشباب، وتشجيعهم على دراسة تخصصات العلوم والتكنولوجيا.</p>
+                        </div>
+                        <div class="card">
+                            <h3>تسريع الاكتشافات العلمية</h3>
+                            <p>من خلال إشراك الآلاف من المتطوعين، يمكننا تحليل البيانات بسرعة غير مسبوقة وتقديم كواكب مرشحة للعلماء.</p>
+                        </div>
+                        <div class="card">
+                            <h3>دمقرطة العلم</h3>
+                            <p>إعطاء الفرصة لأي شخص، في أي مكان، للمشاركة في واحدة من أهم المهام العلمية في عصرنا: البحث عن حياة خارج كوكب الأرض.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 7: Uniqueness -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-7">
+                <div class="slide-content">
+                    <h1>التميز والإبداع: بناء الجسر بين الآلة والإنسان</h1>
+                    <p>ما يميز "صياد العوالم" هو أنه ليس مجرد أداة تحليل، بل هو نظام بيئي متكامل يربط بين الذكاء الاصطناعي والذكاء البشري الجماعي.</p>
+                    <div style="background-color: #f9fafb; padding: 20px; border-radius: 10px; margin-top: 2vh; border: 1px solid #e5e7eb;">
+                        <p style="font-size: clamp(0.9rem, 1.6vw, 1.3rem); color: var(--primary-color);">
+                        الذكاء الاصطناعي يقوم بالعمل الشاق (الفلترة الأولية)، والمستخدمون يقومون بالعمل الذكي (التحقق والتمييز البصري)، مما يخلق دورة فعالة من الاكتشاف والتعلم.
+                        </p>
+                    </div>
+                    <h2 style="margin-top: 3vh;">نحن نحول المستخدم من مشاهد سلبي إلى مشارك فعال في رحلة الاكتشاف العلمي.</h2>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 8: Implementation Plan -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-8">
+                <div class="slide-content">
+                    <h1>خطة التنفيذ والمستقبل: نحو نظام بيئي متكامل</h1>
+                     <div class="icon-container">
+                        <div class="icon-item">
+                            <img src="https://img.icons8.com/fluency/96/database.png" alt="Data Integration Icon"/>
+                            <h3>المرحلة 1: دمج النموذج</h3>
+                            <p>دمج نموذج الذكاء الاصطناعي المدرب مع المنصة لتقديم بيانات مرشحة عالية الجودة للمستخدمين خلال 6 أشهر.</p>
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://img.icons8.com/fluency/96/teacher.png" alt="Partnership Icon"/>
+                            <h3>المرحلة 2: الشراكات التعليمية</h3>
+                            <p>التعاون مع المدارس والجامعات لاستخدام المنصة كأداة تعليمية تفاعلية في مناهج علوم الفلك والبيانات.</p>
+                        </div>
+                         <div class="icon-item">
+                            <img src="https://img.icons8.com/fluency/96/galaxy.png" alt="Expansion Icon"/>
+                            <h3>المرحلة 3: التوسع</h3>
+                            <p>إضافة بيانات من تلسكوبات أخرى وتوسيع أنواع التحليلات لتشمل البحث عن الظواهر الفلكية الأخرى مثل النجوم المتغيرة.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Slide 9: Team (Placeholder) -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-9">
+                <div class="slide-content">
+                    <h1>فريق العمل</h1>
+                    <p>فريقنا مكون من خبراء ومتحمسين في مجالات علم البيانات، تطوير الويب، وعلوم الفضاء.</p>
+                    <!-- You can add team member cards here -->
+                    <h2 style="margin-top: 5vh;">شغفنا المشترك هو جعل استكشاف الفضاء في متناول الجميع.</h2>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 10: Conclusion -->
+        <div class="slide-wrapper">
+            <section class="slide" id="slide-11">
+                <div class="slide-content">
+                    <h1>انضموا إلينا في رحلة البحث عن عوالم جديدة</h1>
+                    <p>مع "صياد العوالم"، كل شخص يمكن أن يكون جزءًا من الاكتشاف العظيم القادم. كل نقرة هي خطوة نحو الإجابة على أقدم سؤال في تاريخ البشرية: هل نحن وحدنا في الكون؟</p>
+                    <h2>شكراً لكم.</h2>
+                </div>
+            </section>
+        </div>
+
+    </main>
+</body>
+</html>
